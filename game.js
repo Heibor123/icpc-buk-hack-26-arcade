@@ -834,7 +834,7 @@ function update(t, dt) {
 
 function gameLoop(dt, time) {
   if (!problemActive) {
-    const s = 1.3;
+    const s = Math.min(dt, 20) * 0.078;
     if (keys['P1L']) plr.x = Math.max(22, plr.x - s);
     if (keys['P1R']) plr.x = Math.min(378, plr.x + s);
     if (keys['P1U']) plr.y = Math.max(41, plr.y - s);
